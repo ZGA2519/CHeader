@@ -19,7 +19,7 @@ just for stupid thing (haha)
 ## How to use
 First import to your project by \#include
 ```c
-#include '<path to CHeader.c file>'
+#include '<path to CHeader.h file>'
 ```
 
 ### printfln() -- print line 
