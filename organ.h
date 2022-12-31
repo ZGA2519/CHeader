@@ -22,62 +22,62 @@ int isum(int num_args, ...);
 double dsum(int num_args, ...);
 int randRange(int min_num, int max_num);
 
-bool checkChar(void *ptr)
-{
-    return sizeof(*(char *)ptr) == sizeof(char);
-}
+// bool checkChar(void *ptr)
+// {
+//     return sizeof(*(char *)ptr) == sizeof(char);
+// }
 
-bool checkInt(void *ptr)
-{
-    return sizeof(*(int *)ptr) == sizeof(int);
-}
+// bool checkInt(void *ptr)
+// {
+//     return sizeof(*(int *)ptr) == sizeof(int);
+// }
 
-bool checkDouble(void *ptr)
-{
-    return sizeof(*(double *)ptr) == sizeof(double);
-}
+// bool checkDouble(void *ptr)
+// {
+//     return sizeof(*(double *)ptr) == sizeof(double);
+// }
 
-void *scanInput(void *var, const char *format_string, ...)
-{
-    va_list arg;
-    va_start(arg, format_string);
-    vprintf(format_string, arg);
-    va_end(arg);
+// void *scanInput(void *var, const char *format_string, ...)
+// {
+//     va_list arg;
+//     va_start(arg, format_string);
+//     vprintf(format_string, arg);
+//     va_end(arg);
 
-    char input[100];
-    if (fgets(input, sizeof(input), stdin) == NULL)
-    {
-        printf("Error reading input.\n");
-        return 0;
-    }
+//     char input[100];
+//     if (fgets(input, sizeof(input), stdin) == NULL)
+//     {
+//         printf("Error reading input.\n");
+//         return 0;
+//     }
 
-    int num_parsed;
-    if (checkChar(var))
-    {
-        num_parsed = sscanf(input, "%c", (char *)var);
-    }
-    else if (checkInt(var))
-    {
-        num_parsed = sscanf(input, "%d", (int *)var);
-    }
-    else if (checkDouble(var))
-    {
-        num_parsed = sscanf(input, "%lf", (double *)var);
-    }
-    else
-    {
-        printf("Error: unsupported variable type.\n");
-        return 0;
-    }
+//     int num_parsed;
+//     if (checkChar(var))
+//     {
+//         num_parsed = sscanf(input, "%c", (char *)var);
+//     }
+//     else if (checkInt(var))
+//     {
+//         num_parsed = sscanf(input, "%d", (int *)var);
+//     }
+//     else if (checkDouble(var))
+//     {
+//         num_parsed = sscanf(input, "%lf", (double *)var);
+//     }
+//     else
+//     {
+//         printf("Error: unsupported variable type.\n");
+//         return 0;
+//     }
 
-    if (num_parsed < 1)
-    {
-        printf("Error: invalid input.\n");
-        return 0;
-    }
+//     if (num_parsed < 1)
+//     {
+//         printf("Error: invalid input.\n");
+//         return 0;
+//     }
 
-    return var;
-}
+//     return var;
+// }
 
 // printf and new line
 void printfln(const char *format_string, ...)
@@ -88,7 +88,7 @@ void printfln(const char *format_string, ...)
     va_end(args);
     printf("\n");
 }
-// print message and scanf integer form user
+// print message and scan integer form user
 int inputi(const char *format_string, ...)
 {
     // print format string
@@ -109,7 +109,7 @@ int inputi(const char *format_string, ...)
     }
 }
 
-// print message and scanf float form user
+// print message and scan float form user
 float inputf(const char *format_string, ...)
 {
     // print format string
@@ -130,7 +130,7 @@ float inputf(const char *format_string, ...)
     }
 }
 
-// print message and scanf double form user
+// print message and scan double form user
 double inputd(const char *format_string, ...)
 {
     // print format string
